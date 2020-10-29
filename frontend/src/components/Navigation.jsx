@@ -45,8 +45,30 @@ class Navigation extends Component {
           className="nav-item dropdown"
           key="email-auth"
         >
+          <Nav navbar style={{ margin: "auto" }}>
+              <NavItem>
+          <NavLink
+                  tag={Link}
+                  to="/statistics"
+                  activeClassName="active"
+                  exact
+                  onClick={this.toggleNavbarOnClick}
+                >
+                  統計
+            </NavLink>
+          <NavLink
+                  tag={Link}
+                  to="/search"
+                  activeClassName="active"
+                  exact
+                  onClick={this.toggleNavbarOnClick}
+                >
+                  検索
+            </NavLink>
+            </NavItem>
+            </Nav>
           <DropdownToggle nav caret className="nav-link">
-            Account
+            アカウント
           </DropdownToggle>
           <DropdownMenu className="dropdown-menu">
             <DropdownItem className="inverse-dropdown">
@@ -56,7 +78,7 @@ class Navigation extends Component {
                   to="/signout"
                   onClick={this.toggleNavbarOnClick}
                 >
-                  Log out
+                  ログアウト
                 </NavLink>
               </span>
             </DropdownItem>
@@ -66,7 +88,7 @@ class Navigation extends Component {
                 to="/changepassword"
                 onClick={this.toggleNavbarOnClick}
               >
-                Change Password
+                パスワードを変更
               </NavLink>
             </DropdownItem>
           </DropdownMenu>
@@ -124,17 +146,6 @@ class Navigation extends Component {
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav navbar style={{ margin: "auto" }}>
-              <NavItem>
-                <NavLink
-                  tag={Link}
-                  to="/"
-                  activeClassName="active"
-                  exact
-                  onClick={this.toggleNavbarOnClick}
-                >
-                  入退室 可視化アプリ
-                </NavLink>
-              </NavItem>
               {this.userIsNotAuthenticated()}
               {this.userIsAuthenticatedEmail()}
             </Nav>
