@@ -10,6 +10,8 @@ import { AuthenticatedRoute } from "./customRoutes/ProtectedRoutes";
 
 import Navigation from "./containers/NavigationContainer";
 import HomePage from "./containers/HomePageContainer";
+import Statistics from "./containers/StatisticsContainer";
+import Search from "./containers/SearchContainer";
 import Login from "./containers/auth/LoginContainer";
 import Register from "./containers/auth/RegisterContainer";
 import ChangePassword from "./containers/auth/ChangePasswordContainer";
@@ -23,6 +25,8 @@ ReactDOM.render(
         <Navigation />
         <Switch>
           <Route exact path="/" component={HomePage} />
+          <Route exact path="/statistics" component={Statistics} />
+          <Route exact path="/search" component={Search} />
           <AuthenticatedRoute exact path="/login" component={Login} />
           <AuthenticatedRoute exact path="/register" component={Register} />
           <Route exact path="/signout" render={() => <Redirect to="/" />} />
