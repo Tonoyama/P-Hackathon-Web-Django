@@ -26,7 +26,7 @@ class InnerPwForm extends Component {
 
     return (
       <span className={classes.container}>
-        <h3 style={{ textAlign: "center" }}>Change Your Password</h3>
+        <h3 style={{ textAlign: "center" }}>パスワードを変更</h3>
         {change_password.resp_message && (
           <div className="alert alert-success" role="alert">
             <strong>{change_password.resp_message}</strong>
@@ -40,7 +40,7 @@ class InnerPwForm extends Component {
         <form onSubmit={handleSubmit}>
           <TextField
             name="current_password"
-            placeholder="Enter your Old password"
+            placeholder="以前のパスワードを入力"
             type="password"
             value={values.current_password}
             onChange={handleChange}
@@ -51,13 +51,13 @@ class InnerPwForm extends Component {
               touched.current_password &&
               errors.current_password
             }
-            label="Old Password"
+            label="以前のパスワード"
             className={classes.textField}
           />
 
           <TextField
             name="new_password"
-            placeholder="Enter your new password"
+            placeholder="新しいパスワードを入力"
             type="password"
             value={values.new_password}
             onChange={handleChange}
@@ -66,12 +66,12 @@ class InnerPwForm extends Component {
             helperText={
               errors.new_password && touched.new_password && errors.new_password
             }
-            label="New Password"
+            label="新しいパスワード"
             className={classes.textField}
           />
           <TextField
             name="re_new_password"
-            placeholder="Repeat your new password"
+            placeholder="新しいパスワードを入力"
             type="password"
             value={values.re_new_password}
             onChange={handleChange}
@@ -82,7 +82,7 @@ class InnerPwForm extends Component {
               touched.re_new_password &&
               errors.re_new_password
             }
-            label="Repeat New Password"
+            label="新しいパスワード"
             className={classes.textField}
           />
           <br />
@@ -93,7 +93,7 @@ class InnerPwForm extends Component {
             onClick={handleReset}
             disabled={!dirty || isSubmitting}
           >
-            Reset
+            リセット
           </Button>
           <Button
             variant="raised"
@@ -101,7 +101,7 @@ class InnerPwForm extends Component {
             type="submit"
             disabled={isSubmitting}
           >
-            Submit
+            送信
           </Button>
         </form>
       </span>
@@ -136,7 +136,7 @@ const EnhancedForm = withFormik({
       .then(() => resetForm());
     setSubmitting(false);
   },
-  displayName: "ChangePasswordForm" //hlps with react devtools
+  displayName: "パスワードを変更" //hlps with react devtools
 })(InnerPwForm);
 
 export const ChangePassword = withStyles(styles)(EnhancedForm);
