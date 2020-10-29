@@ -43,8 +43,7 @@ cd backend
 virtualenv env
 source env/bin/activate
 pip3 install -r requirements/local.txt
-python manage.py makemigrations
-python manage.py custom_user
+python manage.py makemigrations custom_user
 python manage.py migrate
 python manage.py createsuperuser
 python manage.py runserver
