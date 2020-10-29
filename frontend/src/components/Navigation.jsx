@@ -32,7 +32,7 @@ class Navigation extends Component {
   }
 
   toggleNavbarOnClick = () => {
-    if (window.innerWidth <= 768) {
+    if (window.innerWidth <= 600) {
       return this.toggle();
     }
   };
@@ -45,8 +45,6 @@ class Navigation extends Component {
           className="nav-item dropdown"
           key="email-auth"
         >
-          <Nav navbar style={{ margin: "auto" }}>
-              <NavItem>
           <NavLink
                   tag={Link}
                   to="/statistics"
@@ -65,8 +63,6 @@ class Navigation extends Component {
                 >
                   検索
             </NavLink>
-            </NavItem>
-            </Nav>
           <DropdownToggle nav caret className="nav-link">
             アカウント
           </DropdownToggle>
