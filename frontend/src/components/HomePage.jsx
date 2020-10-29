@@ -7,7 +7,7 @@ const HomePage = ({ registration_message }) => (
         <strong>{registration_message}</strong>
       </div>
     )}
-    <h3 className="text-center mt-4">入退室 可視化アプリ</h3>
+    <h3 className="text-center mt-4">入退室 可視化</h3>
   </div>
 );
 
